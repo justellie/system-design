@@ -17,7 +17,7 @@ def upload(f, fs, channel, access):
         channel.basic_publish(
             exchange="",
             routing_key="video",
-            body=json.dumps(message)
+            body=json.dumps(message),
             properties= pika.BasicProperties(
                 delivery_mode = pika.spec.PERSITENT_DELIVERY_MODE
             )
